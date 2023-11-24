@@ -1,0 +1,35 @@
+﻿@using MeetingApp.Models.Entities;
+@model List<Meeting>
+
+<h2>Meeting List</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Toplantı Adı</th>
+           @*  <th>Katılımcı</th> *@
+            <th>Başlama Tarihi</th>
+            <th>Bitiş Tarihi</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var meeting in Model)
+        {
+            <tr>
+                <td>@meeting.Id</td>
+                <td>@meeting.Title</td>
+                <td>@meeting.StartTime</td>
+                <td>@meeting.EndTime</td>
+                <td>
+                    <a asp-area="Admin" asp-controller="Meeting" asp-action="Edit" asp-route-id="@meeting.Id" class="btn btn-success">Düzenle</a> |
+                    <a asp-area="Admin" asp-controller="Meeting" asp-action="Delete" asp-route-id="@meeting.Id" class="btn btn-danger">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a asp-area="Admin" asp-controller="Meeting" asp-action="Create" class="btn btn-outline-info">Yeni Toplantı Oluştur</a>
+ 
+

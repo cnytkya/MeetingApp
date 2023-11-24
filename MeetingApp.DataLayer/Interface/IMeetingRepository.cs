@@ -10,7 +10,9 @@ namespace MeetingApp.DataLayer.Interface
     public interface IMeetingRepository : IGenericRepository<Meeting>
     {
         // Özel toplantı ile ilgili metot.
-        Task<IEnumerable<Meeting>> GetMeetingsByDateRangeAsync(DateTime startDate, DateTime endDate);
+        IEnumerable<Meeting> GetMeetingsByDateRange(DateTime startDate, DateTime endDate);
+        void Update(Meeting meeting);
+        void Save();
     }
 
 }

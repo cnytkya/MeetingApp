@@ -1,0 +1,37 @@
+﻿@model MeetingApp.Models.Entities.Meeting
+
+<h2>Toplantıyı Sil</h2>
+
+<div>
+    <h4>Bu toplantıyı silmek istediğinizden emin misiniz?</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <!-- Diğer özellikleri buraya ekleyebilirsiniz -->
+
+    </dl>
+
+    <form asp-action="Delete" method="post">
+        <input type="hidden" asp-for="Id" />
+
+        <div class="form-group">
+            <input type="submit" value="Sil" class="btn btn-danger" /> |
+            <a asp-action="Index">Listeye Geri Dön</a>
+        </div>
+    </form>
+</div>
