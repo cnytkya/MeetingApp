@@ -27,8 +27,4 @@
     <ProjectReference Include="..\MeetingApp.DataLayer\MeetingApp.DataLayer.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Areas\Identity\Data\" />
-  </ItemGroup>
-
 </Project>
