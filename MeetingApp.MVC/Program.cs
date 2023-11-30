@@ -1,12 +1,19 @@
 using MeetingApp.DataLayer;
+using MeetingApp.DataLayer.Interface;
+using MeetingApp.DataLayer.Repository;
 using Microsoft.EntityFrameworkCore;
-using System;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AppDbContext>(opt=>opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<AppDbContext>();
+builder.Services.AddScoped<IMeetingRepository, MeetingRepository>();
+//builder.Services.AddScoped<IMeetingService, MeetingManager>();
+
 
 var app = builder.Build();
 

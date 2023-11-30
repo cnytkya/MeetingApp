@@ -11,4 +11,9 @@
     <ProjectReference Include="..\MeetingApp.Models\MeetingApp.Models.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Manager\" />
+    <Folder Include="Service\" />
+  </ItemGroup>
+
 </Project>
