@@ -1,19 +1,19 @@
 using MeetingApp.DataLayer;
 using MeetingApp.DataLayer.Interface;
 using MeetingApp.DataLayer.Repository;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<AppDbContext>(opt=>opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddDbContext<AppDbContext>(opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<AppDbContext>();
 builder.Services.AddScoped<IMeetingRepository, MeetingRepository>();
+builder.Services.AddRazorPages();
 //builder.Services.AddScoped<IMeetingService, MeetingManager>();
-
 
 var app = builder.Build();
 
@@ -32,6 +32,7 @@ app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
+app.MapRazorPages();
 
 app.MapControllerRoute(
             name: "areas",

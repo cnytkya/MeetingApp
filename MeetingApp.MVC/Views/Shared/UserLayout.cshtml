@@ -57,9 +57,8 @@
                             <li class="scroll-to-section"><a href="#courses">Nasıl Yapılır</a></li>
                             <li class="scroll-to-section"><a href="#contact">İletişime Geç</a></li>
                             <li class="nav-item">
-                                <a class="nav-link" id="register" asp-area="Identity" asp-page="/Account/Register" onmouseover="showText()" onmouseout="hideText()">
-                                    <button class="btn btn-success rounded-3">Kayıt Ol</button>
-                                    <div id="registerInfo" style="display: none;">Toplantı düzenlemek için üye olun.</div>
+                                <a class="nav-link" id="register" asp-area="Identity" asp-page="/Account/Register">
+                                    <button class="btn btn-success rounded-5">Kayıt Ol</button>
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -822,7 +821,7 @@
     </script>
 </body>
 </html>
-<script>
+@* <script>
     function showText() {
         document.getElementById('registerInfo').style.display = 'block';
     }
@@ -830,5 +829,5 @@
     function hideText() {
         document.getElementById('registerInfo').style.display = 'none';
     }
-</script>
+</script> *@
 @RenderBody()
