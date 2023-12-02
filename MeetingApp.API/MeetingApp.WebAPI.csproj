@@ -14,4 +14,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MeetingApp.DataLayer\MeetingApp.DataLayer.csproj" />
+    <ProjectReference Include="..\MeetingApp.Models\MeetingApp.Models.csproj" />
+  </ItemGroup>
+
 </Project>
